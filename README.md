@@ -16,3 +16,5 @@ I will build the ui while entirely hardcoding it then i wiill make the neccesary
 
 Build 3 UI's 
 Build 3 UI's with state management.
+
+From this project i learnt that every changes or state change must be describe in the action object. Particularly the payload.
