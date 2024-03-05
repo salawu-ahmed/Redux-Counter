@@ -3,10 +3,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { CounterContextProvider } from "./CounterContex";
 import ContextCounter from "./components/ContextCounter";
+import ReduxCounter from "./components/ReduxCounter";
 
 function App() {
   return (
     <>
+      <ReduxCounter />
       <CounterContextProvider>
         <ContextCounter />
       </CounterContextProvider>

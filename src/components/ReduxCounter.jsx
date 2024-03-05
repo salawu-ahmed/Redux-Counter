@@ -1,25 +1,27 @@
-import React from 'react'
-import { decreaseCount, increaseCount } from '../redux/actions/CounterActions'
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import { decreaseCount, increaseCount } from "../redux/actions/CounterActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const ReduxCounter = () => {
-    const dispatch = useDispatch()
-    const reduxCount = useSelector((state) => state.counterReducer.count);
+  const dispatch = useDispatch();
+  const reduxCount = useSelector((state) => state.counterReducer.count);
 
   return (
     <div className="redux-counter">
-        <div className="card">
+      <p>This is a React-Redux counter</p>
+      <div className="card">
+        <div>
           <button>count is {reduxCount}</button>
-          <button onClick={() => dispatch(increaseCount(reduxCount))}>
-            Increase Count
-          </button>
-          <button onClick={() => dispatch(decreaseCount(reduxCount))}>
-            Decrease Count
-          </button>
-          <p>This is a React-Redux counter</p>
         </div>
+        <button onClick={() => dispatch(increaseCount(reduxCount))}>
+          Increase Count
+        </button>
+        <button onClick={() => dispatch(decreaseCount(reduxCount))}>
+          Decrease Count
+        </button>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default ReduxCounter
+export default ReduxCounter;
