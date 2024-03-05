@@ -2,9 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { decreaseCount, increaseCount } from './redux/actions/CounterActions'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch()
+  const count = useSelector(state => state.counterReducer.count)
+  console.log(count);
 
   return (
     <>
@@ -21,9 +25,13 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button onClick={() => dispatch(increaseCount(count))}>
+          Increase Count
+        </button>
+        <button onClick={() =>  dispatch(decreaseCount(count))}>
+          Decrease Count
+        </button>
+        <p>This is a React-Redux counter</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
